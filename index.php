@@ -258,9 +258,9 @@ $tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:800' rel='stylesheet' type='text/css'/>
-	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'/>
-	<link href='http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' rel='stylesheet'/>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:800' rel='stylesheet' type='text/css'/>
+	<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'/>
+	<link href='https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' rel='stylesheet'/>
 	<link href="css/fireworks.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link href="css/soon.min.css" rel="stylesheet"/>		
@@ -562,9 +562,7 @@ $tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
 		}
 	</style>
 	<style>
-	    img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
-	        display: none;
-	    }
+	    
 	</style>
   </head>
   <body>
@@ -638,7 +636,7 @@ $tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
 	</div>	
 	<div id="bg-music" class="jp-jplayer"></div>
   </body>
-  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
   <script src="lib/soundjs-0.6.2.min.js"></script>
   <script src="lib/flashaudioplugin-0.6.2.min.js"></script>
   <script src="lib/jplayer/jquery.jplayer.min.js"></script>  
