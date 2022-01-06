@@ -231,7 +231,7 @@ $dateconverter=new Duong2amlich();
 
 $al_ngay=1;
 $al_thang=1;
-$al_nam=date('Y')+1;
+$al_nam=date('Y');
 $lathangnhuan=0; //nếu là tháng nhuận thì set giá trị là 1
 $timezone='7.0';
 
