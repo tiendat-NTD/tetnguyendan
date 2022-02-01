@@ -226,31 +226,28 @@ class Duong2amlich
 		return $this::jdToDate( $monthStart + $lunarDay - 1 ) ;
 	}
 }
- 
-$dateconverter=new Duong2amlich();
-
-$al_ngay=1;
-$al_thang=1;
-$al_nam=date('Y');
-$lathangnhuan=0; //nếu là tháng nhuận thì set giá trị là 1
-$timezone='7.0';
-
-$ngayduonglich=$dateconverter->convertLunar2Solar($al_ngay, $al_thang, $al_nam, $lathangnhuan,$timezone);
-$ngay_d = $ngayduonglich[0];
-$thang_d = $ngayduonglich[1];
-$nam_d = $ngayduonglich[2];
-if($ngay_d < 10){
-	$ngay_d = '0'.$ngay_d;
+function layngayduonglich($year){
+	$dateconverter=new Duong2amlich();
+	$ngayduonglich=$dateconverter->convertLunar2Solar(1, 1, $year, 0, '7.0');
+	$ngay_d = $ngayduonglich[0];
+	$thang_d = $ngayduonglich[1];
+	$nam_d = $ngayduonglich[2];
+	if($ngay_d < 10){
+		$ngay_d = '0'.$ngay_d;
+	}
+	if($thang_d < 10){
+		$thang_d = '0'.$thang_d;
+	}
+	return $nam_d.'-'.$thang_d.'-'.$ngay_d;
 }
-if($thang_d < 10){
-	$thang_d = '0'.$thang_d;
-}
-if(date('Y-m-d') <= $nam_d.'-'.$thang_d.'-'.$ngay_d){
-	echo $nam_show = date('Y');
+$ngayamlich = layngayduonglich(date('Y'));
+if(date('Y-m-d') < $ngayamlich){
+	$nam_show = date('Y');
 }else{
-	echo $nam_show = date('Y')+1;
+	$nam_show = date('Y')+1;
+	$ngayamlich = layngayduonglich($nam_show);
 }
-$tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
+$tet = $ngayamlich.'T00:00:00';
 ?>
 <!DOCTYPE html>
   <head>
@@ -263,9 +260,9 @@ $tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:800' rel='stylesheet' type='text/css'/>
-	<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'/>
-	<link href='https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' rel='stylesheet'/>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:800' rel='stylesheet' type='text/css'/>
+	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'/>
+	<link href='http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css' rel='stylesheet'/>
 	<link href="css/fireworks.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link href="css/soon.min.css" rel="stylesheet"/>		
@@ -567,7 +564,9 @@ $tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
 		}
 	</style>
 	<style>
-	    
+	    img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+	        display: none;
+	    }
 	</style>
   </head>
   <body>
@@ -641,7 +640,7 @@ $tet = $nam_d.'-'.$thang_d.'-'.$ngay_d.'T00:00:00';
 	</div>	
 	<div id="bg-music" class="jp-jplayer"></div>
   </body>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'></script>
   <script src="lib/soundjs-0.6.2.min.js"></script>
   <script src="lib/flashaudioplugin-0.6.2.min.js"></script>
   <script src="lib/jplayer/jquery.jplayer.min.js"></script>  
